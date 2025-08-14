@@ -6,7 +6,7 @@ img_alt: Stress algorithm pipeline diagram
 description: |
   Python project implementing and analyzing a custom local color “stress” algorithm, with parametric study of R, N, M and comparison to GIMP using PSNR and SSIM.  
 tags:
-  - Python
+  - Python 3
   - Image Processing
   - Optimization
 ---
