@@ -1,0 +1,199 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout
+	title="About | Raphaël Pellure"
+	description="About Raphaël Pellure — Image processing, computer vision & embedded systems engineer from ENSEEIHT."
+>
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Raphaël Pellure working on image processing and computer vision projects"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I'm an engineering student specializing in <strong
+							>Signal, Image & AI (IATI – SIA)</strong
+						> at <strong>ENSEEIHT</strong> (Toulouse). My interests sit
+						at the intersection of <strong>image processing</strong
+						>, <strong>computer vision</strong>, and <strong
+							>embedded systems</strong
+						>, with applications spanning <em>cinema/VFX</em>, <em
+							>aerospace & drones</em
+						>, and <em>scientific imaging</em>.
+					</p>
+					<br />
+					<p>
+						Recently, I completed a 2‑month internship with the <strong
+							>STORM team (IRIT Toulouse)</strong
+						> on <em>Painty</em>, a C++ application for hand‑painted
+						animation inbetweening. Before that, I worked on a
+						MATLAB project <em
+							>“MAT: Medial Axis Extraction and 3D Meshing”</em
+						> (multi‑view reconstruction with SLIC segmentation, skeleton
+						extraction, and surface meshing) and a C/OpenCV project on
+						<strong>texture image segmentation</strong>
+						(K‑means & Mean‑Shift, metrics & visualization tools).
+					</p>
+					<p>
+						On the embedded/low‑level side, I’ve built FPGA and DSP
+						skills (VHDL on Artix‑7, SHARC DSP assembly).
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+						<strong>ENSEEIHT – Toulouse, France</strong> — IATI (SIA),
+						last year in progress.<br />
+						Focus: Applied mathematics, advanced signal & image processing,
+						information theory, optimization under constraints, architectures
+						& synchronous digital design, FPGA technology, DSP, multivariate
+						analysis, inverse problems, introduction to deep learning,
+						advanced statistics & computational statistics.
+					</p>
+					<br />
+					<p>
+						<strong>University of Birmingham (UK)</strong> — Exchange
+						semester.<br />
+						Modules: <em>Data Mining & Machine Learning</em> (text IR,
+						HMMs, ASR), <em>Small Embedded Systems</em> (industrial embedded
+						design, digital & analog circuits, C programming), <em
+							>Electronic Engineering</em
+						>.
+					</p>
+					<br />
+					<p>
+						<strong>Camille Jullian – Bordeaux, France</strong> — CPGE
+						(MPSI/MP).<br />
+						Focus : advanced mathematics, physics, and computer science
+						foundations, including linear algebra, differential equations,
+						probability/statistics, and algorithmic problem-solving.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Associative & cultural involvement</h2>
+				<div class="content">
+					<p>
+						<strong>TVn7</strong> — Video editing.<br />
+						<strong>Photo7</strong> — Photography.<br />
+						<strong>ABC Toulouse</strong> — Cinema programming.<br />
+						<strong>Interests</strong>: photography, cinema, rock culture, sports.
+					</p>
+				</div>
+			</section>
+
+
+			<section>
+	<h2 class="section-title">Skills</h2>
+	<div class="content">
+		<ul class="skills-list">
+			<li><strong>Programming:</strong> Python (NumPy, OpenCV, PyTorch, TensorFlow), C/C++, MATLAB, VHDL, DSP Assembly</li>
+			<li><strong>Tools & Frameworks:</strong> VsCode, Visual Studio, Qt, Git, Blender (4.5), Photoshop, Premiere Pro</li>
+			<li><strong>Languages:</strong> French (native), English (C1), Spanish (B2)</li>
+			<li><strong>Soft Skills:</strong> Teamwork, Scientific Communication, Creative Problem-Solving</li>
+		</ul>
+	</div>
+</section>
+
+<style>
+	.skills-list {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+	.skills-list li {
+		background: var(--gray-900);
+		padding: 0.75rem 1rem;
+		border-radius: 0.75rem;
+		box-shadow: var(--shadow-sm);
+	}
+	.skills-list strong {
+		color: var(--gray-0);
+	}
+</style>
+
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
